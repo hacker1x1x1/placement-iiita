@@ -1,0 +1,865 @@
+@font-face {
+  font-family: "SourceSansProRegular";
+  src: url("../fonts/SourceSansPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "UbuntuRegular";
+  src: url("../fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: "UbuntuLight";
+  src: url("../fonts/Ubuntu-Light.ttf");
+}
+
+@font-face {
+  font-family: "UbuntuThin";
+  src: url("../fonts/Ubuntu-Thin.ttf");
+}
+
+@font-face {
+  font-family: "UbuntuMedium";
+  src: url("../fonts/Ubuntu-Medium.ttf");
+}
+
+@font-face {
+  font-family: "UbuntuHairline";
+  src: url("../fonts/Ubuntu-Hairline.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "UbuntuRegular";
+  min-width: 360px !important;
+}
+
+#header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 0px !important;
+  /*border: 1px solid;*/
+  z-index: 20;
+}
+
+
+/*jugaad*/
+
+header {
+  /*min-width: 360px !important; */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  height: 60px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 0px !important;
+  background: white;
+  z-index: 20;
+}
+
+header>div {
+  height: 100%;
+}
+
+header>div#nav-menu,
+header>div#account,
+header>div#nav-menu > a,
+header>div#account a {
+  width: 60px;
+  overflow: hidden;
+}
+
+header>div#site-name {
+  width: calc(100% - 120px);
+}
+
+header .menu-trigger {
+  height: 100%;
+  padding: 20px;
+  line-height: 80px;
+  text-align: center;
+  box-shadow: none;
+  background: transparent;
+}
+
+header #account {
+  height: 100%;
+  padding: 20px;
+  line-height: 80px;
+  text-align: center;
+}
+
+header .menu-trigger>i,
+header #account i {
+  font-size: 2.4em;
+}
+
+header .menu-trigger:hover {
+  box-shadow: none;
+  background: transparent;
+}
+
+header,
+header a {
+  /*color: #4C6E92 !important;*/
+  color: cornflowerblue !important;
+  color: rgb(7, 50, 131) !important;
+}
+
+
+/*nav menu styles start here*/
+
+.menu-wrapper {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  overflow: hidden;
+  width: 60px;
+  height: calc(100vh - 60px);
+  z-index: 2;
+  border-top: 1px solid #ECE5E5;
+  box-shadow: 3px 5px 10px 0 rgba(0, 0, 0, 0.16);
+  will-change: transform, width;
+  -webkit-transform: translateX(-60px);
+  transform: translateX(-60px);
+  -webkit-transition: -webkit-transform 0.3s, width 0.3s;
+  -webkit-transition: width 0.3s, -webkit-transform 0.3s;
+  transition: width 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, width 0.3s;
+  transition: transform 0.3s, width 0.3s, -webkit-transform 0.3s;
+}
+
+.scroller {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 370px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.menu {
+  -webkit-margin-before: 0px !important;
+  -webkit-margin-after: 0px !important;
+}
+
+.menu li.menu-list-items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid #ECE5E5;
+}
+
+.menu li.menu-list-items > .submenu-head {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.menu li.menu-list-items > .submenu-body {
+  display: none;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-margin-before: 0px !important;
+  -webkit-margin-after: 0px !important;
+}
+
+.menu li.menu-list-items > .submenu-body * {
+  /*border: 1px solid;*/
+}
+
+.menu li.menu-list-items > .submenu-body > li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.menu li.menu-list-items > .submenu-body > li > i {
+  width: 60px;
+  font-size: 1em;
+  text-align: center;
+  line-height: 60px;
+  margin-left: 15px;
+}
+
+.menu li.menu-list-items > .submenu-body > li > a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1em;
+  width: calc(100% - 75px);
+  padding: 18px 0px !important;
+}
+
+.menu li.menu-list-items > .submenu-head > i,
+.menu li.menu-list-items > i {
+  width: 60px;
+  padding: 18px 0px !important;
+  text-align: center;
+  font-size: 2.4em;
+}
+
+.menu li.menu-list-items > .submenu-head > a,
+.menu li.menu-list-items > a {
+  width: calc(100% - 90px);
+  line-height: 40px;
+  text-indent: 20px;
+  padding: 18px 0px !important;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+
+/* styles for opening menu */
+
+.menu-wrapper.open-all,
+.menu-wrapper.open-part {
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+.menu-wrapper.open-all {
+  width: 340px;
+}
+
+.menu-wrapper.open-all .submenu li {
+  height: 60px;
+}
+
+@media screen and (max-width: 422px) {
+  .menu-wrapper.open-all {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    width: 100%;
+  }
+  .menu-wrapper.open-all .scroller {
+    width: 130%
+  }
+}
+
+
+/*all for the navbar menu till here...*/
+
+#iiitalogo {
+  width: auto;
+  height: 60px;
+  margin-right: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  #iiitalogo {
+    height: 45px;
+    margin-right: 7px;
+  }
+}
+
+#site-name h5 {
+  line-height: 38px;
+  font-weight: 400;
+  font-family: "UbuntuRegular";
+  /*font-size: 100%;*/
+}
+
+#site-name h5 a {
+  position: relative;
+  letter-spacing: initial;
+  font-size: 1.3em;
+  color: #1C438A !important;
+}
+
+@media screen and (max-width: 720px) {
+  #site-name h5 {
+    font-size: 100%;
+  }
+}
+
+.home-slider {
+  height: 500px !important;
+  overflow: hidden;
+}
+
+.home-slider ul.slides {
+  height: 100% !important;
+}
+
+.home-slider ul.slides li div.caption {
+  -webkit-transform: translateY(90px) !important;
+          transform: translateY(90px) !important;
+}
+
+.home-slider ul.slides li div.caption h5 {
+  color: white !important;
+}
+
+.home-slider ul.slides li div.caption h3 {
+  /*color: #152E5D !important;*/
+}
+
+.home-slider ul.indicators {
+  z-index: 10;
+  position: relative;
+  top: -25px;
+}
+
+.home-slider ul.indicators li {
+  float: right;
+}
+
+.slider .indicators .indicator-item {
+  background: white;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+.slider .indicators .indicator-item.active {
+  background: rgba(100, 148, 237, 0.055);
+}
+
+.page-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 35vh !important;
+  position: relative;
+  top: -65px;
+  z-index: -99;
+  background: -webkit-linear-gradient(right, rgb(36, 0, 70), #4389A2) !important;
+  /* Chrome 10-25, Safari 5.1-6 */
+}
+
+.display-pic{
+
+  position: relative;
+  top: -65px;
+  z-index: -99;
+}
+
+.page-title h2 {
+  font-family: "UbuntuThin";
+}
+
+.chips-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-bottom: -50px !important;
+  padding-top: 20px !important;
+}
+
+.chips-bar .chip {
+  margin-left: 3px !important;
+  margin-right: 3px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  color: white !important;
+  background: rgb(23, 23, 24) !important;
+}
+
+.chips-bar .chip p,
+.chips-bar .chip a {
+  color: white !important;
+}
+
+.block-title {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.block-title p.title {
+  font-family: "UbuntuMedium";
+  font-size: 2.4em;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(20, 21, 22);
+  -webkit-transition: border-bottom 0.4s;
+  transition: border-bottom 0.4s;
+}
+
+.block-title span.leftline,
+.block-title span.rightline {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 2px;
+  background: rgb(27, 28, 29);
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.block-title span.leftline {
+  margin: 0 30px 0 10%;
+}
+
+.block-title span.rightline {
+  margin: 0 10% 0 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .block-title p.title {
+    padding-bottom: 3px;
+    border-bottom: 1px solid cornflowerblue;
+  }
+  .block-title span.leftline,
+  .block-title span.rightline {
+    opacity: 0;
+  }
+}
+
+.block ul li {
+  list-style: disc;
+}
+
+#tpo_message #pic {
+  margin: 30px;
+  margin-right: 70px;
+  border-radius: 5px;
+}
+
+#tpo_message p#message {
+  font-size: 1.1em;
+  letter-spacing: 2px;
+}
+
+#past_recruiters>div:not(:first-child) {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+#past_recruiters img {
+  margin: 0 calc(100% * 4/12 * 1/8);
+}
+
+@media only screen and (max-width: 600px) {
+  #past_recruiters img {
+    margin: 35px calc(100% * 2/12 * 1/4);
+  }
+}
+
+#it ul > li,
+#ece ul > li,
+#it ul > li > ul >li,
+#ece ul > li > ul > li,
+#lab_list ul > li,
+#courses ul > li,
+#sponsored_projects ul > li,
+#placement_facilities ul > li,
+#placement_policy ul > li,
+#exchange_program_institutions ul > li,
+#centers_of_excellence ul > li,
+#past_recruiters ul > li,
+#job_internships ul > li,
+#course_overview ul >li {
+  margin-left: 30px;
+  margin-bottom: 5px;
+  list-style: circle;
+}
+
+#lab_gallery .image_holder {
+  height: 200px;
+  padding: 10px !important;
+  /*margin: 10px;*/
+}
+
+#lab_gallery .image_holder .material-placeholder {
+  height: 100%;
+  width: 100%;
+}
+
+#lab_gallery .image_holder .material-placeholder img {
+  height: 100%;
+  width: 100%;
+}
+
+#placement_procedure ul > li {
+  margin-left: 30px;
+  margin-bottom: 5px;
+  list-style: decimal;
+}
+
+.brand-logo {
+  font-size: 1.5em;
+}
+
+@media screen and (max-width: 601px){
+  .brand-logo {
+    left: 60% !important;
+  }
+  .display-pic img{
+    height: 220px !important;
+  }
+}
+
+.body h5 {
+  color: cornflowerblue;
+  font-family: UbuntuMedium;
+}
+
+#iiita_campus img {
+  margin: 25px;
+  border-radius: 3px;
+}
+
+#campus_images img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 601px) {
+  #campus_images img {
+    margin: 20px calc( 100% * 3/12 * 1/6);
+  }
+}
+
+
+/*Styles for demographics page*/
+
+.demographics div.body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.demographics div.body div.svg-wrapper {}
+
+#ug_demographics svg legend,
+#pg_demographics svg legend {
+  text-indent: 4px;
+}
+
+
+/*styles for the courses page*/
+
+#course_overview {}
+
+#course_overview div.body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#course_overview div.body .course-head {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /*color: cornflowerblue;*/
+  color: #164896;
+  font-family: "UbuntuLight";
+  font-size: 1.3em;
+  font-weight: 500;
+  text-indent: 20px;
+  border-bottom: 1px solid #164896;
+  cursor: pointer;
+}
+
+#course_overview div.body .course-head .toggle-course-body {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+#course_overview .course-container.course-body-closed .course-head .toggle-course-body {
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+}
+
+#course_overview .course-container.course-body-open .course-head .toggle-course-body {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+
+#course_overview div.body .course-head .toggle-course-body:before,
+#course_overview div.body .course-head .toggle-course-body:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #164896;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+#course_overview .course-container.course-body-closed .course-head .toggle-course-body:before {
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+}
+
+#course_overview .course-container.course-body-open .course-head.course-body-open .toggle-course-body:before {
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+}
+
+#course_overview div.body .course-body {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.course-body > div.courses {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 20px;
+}
+
+.course-body > div.courses > p {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.course-body > div.courses > ul {
+  list-style: disc;
+  margin-bottom: 40px;
+}
+
+
+/*.course-structure {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+
+}
+
+.course-structure > div.courses{
+	flex-grow: 1;
+	margin: 20px;
+}*/
+
+.contact-card {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 460px;
+  margin: 0 calc(100% * 3/12 * 1/6) !important;
+}
+
+@media screen and (max-width: 992px) {
+  .contact-card {
+    min-height: 100px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .contact-card.offset-s1 {
+    margin-left: 8.3333333333% !important;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 992px) {
+  .contact-card .contact-image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.contact-card .contact-image img {
+  display: block;
+  width: 80% !important;
+  margin: 0 auto !important;
+}
+
+.contact-card .contact-details {
+  text-align: center
+}
+
+#queryform label.active,
+#queryform .input-field .prefix.active {
+  color: cornflowerblue !important;
+}
+
+#queryform input[type="email"]:focus:not([readonly]),
+#queryform input[type="number"]:focus:not([readonly]),
+#queryform input[type="email"]:focus:not([readonly]),
+#queryform textarea:focus:not([readonly]) {
+  border-bottom: 1px solid cornflowerblue !important;
+  box-shadow: 0 1px 0 0 cornflowerblue !important;
+}
+
+#queryform textarea {
+  height: 110px !important;
+}
+
+#queryform button[type="submit"] {
+  background: cornflowerblue !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+#map {
+  height: 400px;
+}
+
+
+/*Footer styles*/
+
+footer {
+  margin-top: 15vh !important;
+  background: -webkit-linear-gradient(right,#4389A2, rgb(36, 0, 70)) !important
+}
+
+footer.page-footer .footer-copyright {
+  height: initial !important;
+  min-height: 30px !important;
+  line-height: initial !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+.footer-copyright a{
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+
+}
