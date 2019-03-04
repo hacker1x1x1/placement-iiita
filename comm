@@ -1,0 +1,3 @@
+ 2060  scp -r * placementsweb@172.31.1.38:/data/placements 
+ 2061  history 2
+ 2062  history 3 >> comm
